@@ -1,0 +1,288 @@
+note_id,subject_id,hadm_id,charttime,exam_name,text
+10000001,10001,20001,2150-03-14 02:31:00,CT HEAD W/O CONTRAST,"FINAL REPORT
+
+EXAMINATION: CT HEAD W/O CONTRAST
+
+INDICATION: ___ year old ___ with sudden onset severe headache and
+vomiting. Rule out subarachnoid hemorrhage.
+
+TECHNIQUE: Non-contrast CT of the head was performed. Axial images
+were obtained from the skull base to the vertex.
+
+COMPARISON: None.
+
+FINDINGS:
+
+There is hyperdensity within the basal cisterns and sulci of the
+bilateral cerebral convexities, consistent with subarachnoid
+hemorrhage. No intraparenchymal hemorrhage is identified. No
+hydrocephalus. Mild cerebral edema is noted. No midline shift.
+The osseous structures are intact. No fracture identified.
+Visualized paranasal sinuses are clear.
+
+IMPRESSION:
+
+1. Subarachnoid hemorrhage involving the basal cisterns and
+   bilateral cerebral convexities.
+2. Mild cerebral edema without hydrocephalus or midline shift.
+3. Recommend urgent neurosurgical consultation."
+10000002,10002,20002,2151-07-22 10:15:00,CT HEAD W/O CONTRAST,"FINAL REPORT
+
+EXAMINATION: CT HEAD W/O CONTRAST
+
+INDICATION: ___ year old ___ with history of hypertension presenting
+with acute onset right-sided weakness and aphasia.
+
+TECHNIQUE: Non-contrast CT of the head was performed. Axial images
+were obtained from the skull base to the vertex.
+
+COMPARISON: No prior imaging available.
+
+FINDINGS:
+
+There is a hyperdense lesion in the left basal ganglia measuring
+approximately 3.2 x 2.8 cm, consistent with acute hypertensive
+intraparenchymal hemorrhage. There is surrounding vasogenic edema
+with mild mass effect on the left lateral ventricle. Midline shift
+of approximately 4 mm to the right is noted. No hydrocephalus.
+No herniation. Osseous structures intact.
+
+IMPRESSION:
+
+1. Acute left basal ganglia hypertensive intraparenchymal hemorrhage
+   measuring 3.2 x 2.8 cm.
+2. Mild mass effect with 4 mm rightward midline shift.
+3. Surrounding vasogenic edema.
+4. Neurosurgical consultation recommended."
+10000003,10003,20003,2149-11-05 16:44:00,CT HEAD W/O CONTRAST,"FINAL REPORT
+
+EXAMINATION: CT HEAD W/O CONTRAST
+
+INDICATION: ___ year old ___ with altered mental status and fever.
+History of ___ immunocompromised state.
+
+TECHNIQUE: Non-contrast CT of the head was performed. Axial images
+were obtained from the skull base to the vertex.
+
+COMPARISON: CT head ___.
+
+FINDINGS:
+
+There is no acute intracranial hemorrhage or mass effect. No midline
+shift. The ventricles are mildly enlarged, likely reflecting mild
+cerebral atrophy. There are multiple hypodense lesions in the right
+frontal and parietal lobes with surrounding edema, the largest
+measuring approximately 1.5 cm. Findings are concerning for
+infectious or metastatic etiology. No herniation identified.
+Osseous structures intact. Paranasal sinuses unremarkable.
+
+IMPRESSION:
+
+1. Multiple hypodense lesions in the right frontal and parietal
+   lobes with surrounding edema, concerning for infectious
+   (abscess) or metastatic disease.
+2. Mild cerebral atrophy.
+3. MRI brain with and without contrast recommended for further
+   characterization."
+10000004,10004,20004,2152-01-30 08:22:00,CT HEAD W AND W/O CONTRAST,"FINAL REPORT
+
+EXAMINATION: CT HEAD W AND W/O CONTRAST
+
+INDICATION: ___ year old ___ with known history of glioblastoma
+multiforme, status post resection and chemoradiation. Follow-up
+imaging.
+
+TECHNIQUE: CT of the head was performed before and after the
+administration of intravenous contrast.
+
+COMPARISON: MRI brain ___.
+
+FINDINGS:
+
+Post-surgical changes are noted in the right temporal lobe with
+encephalomalacic changes at the resection site. There is an
+irregular area of peripheral rim enhancement at the resection
+margin measuring 3.8 x 3.1 cm, increased from prior. Moderate
+surrounding vasogenic edema with effacement of the right lateral
+ventricle. Midline shift of 6 mm to the left. No new hemorrhage.
+Osseous structures intact.
+
+IMPRESSION:
+
+1. Interval increase in size of rim-enhancing lesion at the right
+   temporal resection site, measuring 3.8 x 3.1 cm, concerning for
+   tumor recurrence versus treatment-related changes.
+2. Moderate surrounding vasogenic edema with 6 mm leftward midline
+   shift.
+3. MRI brain with perfusion sequences recommended for further
+   evaluation."
+10000005,10005,20005,2150-09-03 23:57:00,CT HEAD W/O CONTRAST,"FINAL REPORT
+
+EXAMINATION: CT HEAD W/O CONTRAST
+
+INDICATION: ___ year old ___ involved in motor vehicle accident.
+Loss of consciousness at scene. Rule out intracranial injury.
+
+TECHNIQUE: Non-contrast CT of the head was performed. Axial images
+were obtained from the skull base to the vertex. Bone algorithm
+reconstructions obtained.
+
+COMPARISON: None.
+
+FINDINGS:
+
+There is a small epidural hematoma along the right temporal convexity
+measuring up to 8 mm in maximum thickness with associated right
+temporal bone fracture extending through the squamosal portion.
+There is no significant midline shift. No subdural hematoma. No
+subarachnoid hemorrhage. No intraparenchymal contusion identified.
+The ventricles are normal in size. The basal cisterns are patent.
+
+IMPRESSION:
+
+1. Small right temporal epidural hematoma measuring up to 8 mm
+   associated with right temporal bone fracture.
+2. No significant midline shift.
+3. Urgent neurosurgical evaluation recommended."
+10000006,10006,20006,2148-05-17 14:08:00,CT HEAD W/O CONTRAST,"FINAL REPORT
+
+EXAMINATION: CT HEAD W/O CONTRAST
+
+INDICATION: ___ year old ___ with progressive headache and blurred
+vision over several weeks.
+
+TECHNIQUE: Non-contrast CT of the head was performed. Axial images
+were obtained from the skull base to the vertex.
+
+COMPARISON: No prior CT available.
+
+FINDINGS:
+
+There is no acute intracranial hemorrhage. No midline shift or
+herniation. The ventricles are mildly enlarged with periventricular
+hypodensity suggestive of transependymal CSF flow, consistent with
+communicating hydrocephalus. The basal cisterns appear effaced.
+Sulci are diminished bilaterally. No focal parenchymal lesion
+identified. Osseous structures intact.
+
+IMPRESSION:
+
+1. Communicating hydrocephalus with transependymal CSF flow and
+   effacement of basal cisterns.
+2. No acute hemorrhage.
+3. Neurology and neurosurgery consultation recommended. LP
+   consideration per clinical team."
+10000007,10007,20007,2153-02-11 07:35:00,CT HEAD W/O CONTRAST,"FINAL REPORT
+
+EXAMINATION: CT HEAD W/O CONTRAST
+
+INDICATION: ___ year old ___ with history of atrial fibrillation on
+anticoagulation presenting with acute confusion and left-sided
+facial droop.
+
+TECHNIQUE: Non-contrast CT of the head was performed. Axial images
+were obtained from the skull base to the vertex.
+
+COMPARISON: CT head ___.
+
+FINDINGS:
+
+There is subtle hypodensity in the right MCA territory involving
+the right insular cortex and right basal ganglia, consistent with
+early acute ischemic infarction. No hemorrhagic transformation.
+No mass effect or midline shift. The left hemisphere appears
+unremarkable. The posterior fossa structures are intact. Osseous
+structures intact. Paranasal sinuses clear.
+
+IMPRESSION:
+
+1. Early acute right MCA territory ischemic infarction involving
+   the right insular cortex and right basal ganglia.
+2. No hemorrhagic transformation.
+3. Recommend urgent MRI brain with DWI for confirmation and extent
+   delineation. Stroke team notification."
+10000008,10008,20008,2151-08-29 19:20:00,CT HEAD W/O CONTRAST,"FINAL REPORT
+
+EXAMINATION: CT HEAD W/O CONTRAST
+
+INDICATION: ___ year old ___ with history of chronic alcohol use
+presenting with fall and head trauma. Rule out intracranial injury.
+
+TECHNIQUE: Non-contrast CT of the head was performed. Axial images
+were obtained from the skull base to the vertex.
+
+COMPARISON: None.
+
+FINDINGS:
+
+There is a thin crescentic hyperdense extra-axial collection along
+the right cerebral convexity consistent with acute subdural hematoma,
+measuring up to 5 mm in maximum thickness. No significant mass effect
+or midline shift. Bilateral frontal and temporal cerebral atrophy
+is noted, consistent with chronic alcohol-related changes. No
+intraparenchymal hemorrhage. Ventricles mildly enlarged. Osseous
+structures intact without fracture.
+
+IMPRESSION:
+
+1. Acute right subdural hematoma measuring up to 5 mm without
+   significant mass effect or midline shift.
+2. Diffuse cerebral atrophy, likely related to chronic alcohol use.
+3. Neurosurgical consultation recommended."
+10000009,10009,20009,2149-04-06 11:50:00,CT HEAD W/O CONTRAST,"FINAL REPORT
+
+EXAMINATION: CT HEAD W/O CONTRAST
+
+INDICATION: ___ year old ___ with history of hypertension and
+diabetes presenting with dizziness and diplopia.
+
+TECHNIQUE: Non-contrast CT of the head was performed. Axial images
+were obtained from the skull base to the vertex.
+
+COMPARISON: CT head ___.
+
+FINDINGS:
+
+There is no acute intracranial hemorrhage or territorial infarction.
+No mass effect or midline shift. Moderate periventricular and
+subcortical white matter hypodensities are present, increased compared
+to prior examination, consistent with progressive chronic small vessel
+ischemic disease. The posterior fossa structures appear intact. The
+ventricles are mildly enlarged. Mild generalized cerebral atrophy.
+No acute bony abnormality.
+
+IMPRESSION:
+
+1. No acute intracranial hemorrhage or large territorial infarction.
+2. Progressive chronic small vessel ischemic disease compared to
+   prior CT.
+3. Mild generalized cerebral atrophy.
+4. MRI brain recommended for further evaluation of posterior fossa
+   structures and small acute infarcts."
+10000010,10010,20010,2152-12-01 04:10:00,CT HEAD W/O CONTRAST,"FINAL REPORT
+
+EXAMINATION: CT HEAD W/O CONTRAST
+
+INDICATION: ___ year old ___ with new onset seizure. No prior
+neurological history.
+
+TECHNIQUE: Non-contrast CT of the head was performed. Axial images
+were obtained from the skull base to the vertex.
+
+COMPARISON: None available.
+
+FINDINGS:
+
+There is no acute intracranial hemorrhage, mass effect, or midline
+shift. No territorial infarction. The ventricles and sulci are
+normal in size and configuration for the patient's stated age.
+The basal cisterns are patent. No extra-axial fluid collections.
+No focal parenchymal lesion identified. Osseous structures intact.
+Visualized paranasal sinuses and mastoid air cells are clear.
+
+IMPRESSION:
+
+1. No acute intracranial abnormality identified on non-contrast CT.
+2. MRI brain with and without contrast recommended for more
+   sensitive evaluation of seizure etiology including cortical
+   dysplasia, low-grade tumor, or mesial temporal sclerosis."

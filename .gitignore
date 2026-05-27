@@ -1,0 +1,16 @@
+# Raw MIMIC-IV-derived patient data — NOT redistributable under the PhysioNet DUA
+dataset_v2.csv
+bquxjob_*.csv
+mimitc-ct-head-example.csv
+final_ct_head_dataset.csv
+results/signal2scan_feature_extraction_4h.csv
+results/signal2scan_feature_extraction_4h.xlsx
+results/signal2scan_feature_extraction_4h_100.csv
+**/final_ct_head_dataset.csv
+
+# Source archive and unpacked working copy
+*.zip
+extracted/
+
+# OS / editor cruft
+.DS_Store
