@@ -4,7 +4,7 @@
 
 Signal2Scan asks whether routinely collected ICU clinical data can predict whether a head CT scan will be clinically informative — helping distinguish patients who need urgent imaging from those unlikely to benefit. The goal is to support evidence-based imaging decisions that reduce unnecessary radiation exposure and transport risk for unstable patients, while preserving rapid imaging access for high-risk cases.
 
-This work was developed by **Team 2 (ZZZ Lab)** for the Mayo Clinic Datathon, using the [MIMIC-IV](https://physionet.org/content/mimiciv/) critical care database.
+This work was developed by team **Signal2Scan** for the Mayo Clinic Datathon, using the [MIMIC-IV](https://physionet.org/content/mimiciv/) critical care database.
 
 ## Clinical motivation
 
@@ -115,4 +115,4 @@ This project uses **MIMIC-IV**, a credentialed, de-identified database. Access r
 
 ---
 
-*Team 2 — ZZZ Lab · Mayo Clinic Datathon*
+*Team Signal2Scan · Mayo Clinic Datathon*
