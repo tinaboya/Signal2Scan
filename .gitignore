@@ -12,5 +12,8 @@ results/signal2scan_feature_extraction_4h_100.csv
 *.zip
 extracted/
 
+# Paper drafts — kept local, NOT published to GitHub
+paper/
+
 # OS / editor cruft
 .DS_Store
