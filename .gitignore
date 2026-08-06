@@ -53,3 +53,6 @@ PRIMER_internal.md
 **/.DS_Store
 __pycache__/
 *.pyc
+
+# Local email drafts (name individuals; not for a public repo)
+DRAFT_reply_to_*.md
