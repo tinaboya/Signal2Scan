@@ -1,0 +1,10 @@
+unit,n,positive_rate
+Neuro Stepdown,161,0.6956521739130435
+Neuro Intermediate,171,0.5906432748538012
+Neuro Surgical Intensive Care Unit (Neuro SICU),61,0.4918032786885246
+Surgical Intensive Care Unit (SICU),1043,0.4678811121764142
+Trauma SICU (TSICU),313,0.22364217252396165
+Medical/Surgical Intensive Care Unit (MICU/SICU),695,0.08633093525179857
+Coronary Care Unit (CCU),360,0.08333333333333333
+Medical Intensive Care Unit (MICU),1303,0.08135072908672294
+Cardiac Vascular Intensive Care Unit (CVICU),280,0.025
