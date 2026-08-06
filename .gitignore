@@ -1,19 +1,55 @@
-# Raw MIMIC-IV-derived patient data — NOT redistributable under the PhysioNet DUA
+# =====================================================================
+# Patient data — MIMIC-IV derived, NOT redistributable under the
+# PhysioNet DUA. Nothing here may ever be committed.
+# =====================================================================
 dataset_v2.csv
 bquxjob_*.csv
 mimitc-ct-head-example.csv
 final_ct_head_dataset.csv
+**/final_ct_head_dataset.csv
 results/signal2scan_feature_extraction_4h.csv
 results/signal2scan_feature_extraction_4h.xlsx
 results/signal2scan_feature_extraction_4h_100.csv
-**/final_ct_head_dataset.csv
 
 # Source archive and unpacked working copy
 *.zip
 extracted/
 
-# Paper drafts — kept local, NOT published to GitHub
-paper/
+# =====================================================================
+# Experiment outputs — fail-safe deny-list.
+#
+# Everything under outputs/ is private by default, so a new experiment
+# never leaks patient-level rows by accident. Only tables that are
+# aggregate (metrics, counts) may be whitelisted below; anything with a
+# note_id, subject_id, hadm_id, or report text must NOT be.
+# =====================================================================
+paper/reproduce/outputs/*
+!paper/reproduce/outputs/e00_reproduce_table.csv
+!paper/reproduce/outputs/e00_robustness.csv
+!paper/reproduce/outputs/e02_cv_results.csv
+!paper/reproduce/outputs/e09_*.csv
+
+# =====================================================================
+# Paper drafts — kept local until the team decides to publish them.
+# Code and project documentation under paper/ ARE tracked (see below).
+# =====================================================================
+paper/*.tex
+paper/*.pdf
+paper/*.png
+paper/ml4h_signal2scan_draft.md
+paper/*.aux
+paper/*.log
+paper/*.out
+
+# =====================================================================
+# Internal notes — the team's own assessment of what the current numbers
+# do and do not support, plus the number-provenance table and glossary.
+# Deliberately not public. Move to the private paper repo once it exists.
+# =====================================================================
+PRIMER_internal.md
 
 # OS / editor cruft
 .DS_Store
+**/.DS_Store
+__pycache__/
+*.pyc
