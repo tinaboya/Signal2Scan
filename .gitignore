@@ -40,6 +40,8 @@ paper/ml4h_signal2scan_draft.md
 paper/*.aux
 paper/*.log
 paper/*.out
+paper/*.fls
+paper/*.fdb_latexmk
 
 # =====================================================================
 # Internal notes — the team's own assessment of what the current numbers
