@@ -18,6 +18,15 @@ Head CTs are frequently ordered in the ICU, but a large fraction return no acute
 
 The pipeline has two main stages: labeling CT reports from free text, and predicting those labels from structured ICU data captured *before* the scan.
 
+![Data lineage and study flow](signal2scan_data_lineage.png)
+
+The radiology notes define the rows — one row is one CT order at one moment — and
+the labelling and feature-extraction paths each attach something to those rows.
+Aggregating "the 4 hours before the scan" is only possible once the scan time is
+known, which is why the feature path depends on the notes rather than running
+alongside them. Full detail in [`DATA_LINEAGE.md`](DATA_LINEAGE.md); a from-zero
+walkthrough of the whole project is in [`PROJECT_PRIMER.md`](PROJECT_PRIMER.md).
+
 ### 1. Labeling CT reports (SQL / NLP)
 
 Radiology reports for head CTs (`CT HEAD W/O CONTRAST`, `CT HEAD W/ & W/O CONTRAST`, `CT HEAD W/ CONTRAST`) are pulled from the MIMIC-IV note tables and classified with rule-based regular expressions over the `IMPRESSION` / `FINDINGS` sections into:
@@ -66,11 +75,24 @@ Across the labeled cohort, the CT classification distribution was roughly:
 | Unclear | 169 |
 | Post-surgical / Unchanged | 82 |
 
-Notable signal directions from the models:
+Notable signal directions from the models — all three run against clinical
+intuition, which is itself the finding:
 
 - Higher **PTT, INR**, and **low platelets** → more likely **Negative** CT
-- Lower **GCS motor and verbal** → more likely **Positive** CT
-- Higher **respiratory rate** → more likely **Positive** CT
+- **Higher GCS** motor and verbal → more likely **Positive** CT
+  (mean GCS total 11.5 in Positive scans vs 9.5 in Negative)
+- **Lower respiratory rate** → more likely **Positive** CT (14.8 vs 17.1)
+
+The most likely common explanation is confounding by sedation and mechanical
+ventilation, which depress GCS and respiratory rate in the medical-ICU patients
+who dominate the Negative class. Testing that is open work.
+
+> **These results are provisional.** The outcome labels come from rule-based
+> regular expressions that have not yet been validated against clinician
+> adjudication — see [`LABELING.md`](LABELING.md) — and a substantial part of the
+> pooled discrimination reflects differences in case mix between ICUs rather than
+> clinical physiology (see [`STATUS.md`](STATUS.md) §3). Current state, ownership,
+> and open decisions live in [`STATUS.md`](STATUS.md).
 
 ## Repository structure
 

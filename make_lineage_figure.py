@@ -30,9 +30,9 @@ C_EDGE   = "#5a5a5a"
 INK      = "#1a1a1a"
 WHITE    = "#ffffff"
 
-fig, ax = plt.subplots(figsize=(7.2, 8.8))   # single-column-friendly aspect
+fig, ax = plt.subplots(figsize=(7.2, 9.2))   # single-column-friendly aspect
 ax.set_xlim(0, 10)
-ax.set_ylim(-0.3, 13)
+ax.set_ylim(-0.6, 13)
 ax.axis("off")
 
 
@@ -67,78 +67,65 @@ def arrow(x1, y1, x2, y2, color=C_EDGE, label=None, lx=0, ly=0):
 
 
 # ── Title ──────────────────────────────────────────────────────────────────
-ax.text(5, 12.6, "Signal2Scan — Data Lineage & Study Flow",
+ax.text(5, 12.7, "Signal2Scan — Data Lineage & Study Flow",
         ha="center", va="center", fontsize=12.5, weight="bold", color=INK)
 
 # ── Source ─────────────────────────────────────────────────────────────────
-box(5, 11.7, 6.6, 0.8, "MIMIC-IV  (BigQuery: physionet-data.mimiciv_*)",
+box(5, 11.80, 6.6, 0.8, "MIMIC-IV  (BigQuery: physionet-data.mimiciv_*)",
     C_SOURCE, sub="de-identified ICU database")
 
-# split down to the two paths
-arrow(5, 11.3, 2.9, 10.55, C_LABEL)
-arrow(5, 11.3, 7.1, 10.55, C_FEAT)
+# ── The radiology notes define the unit of analysis ────────────────────────
+# They are drawn ABOVE the fork on purpose: one row is one CT order, and the
+# feature extraction can only aggregate "the 4h before the scan" once the scan
+# time is known. The two paths below attach labels and columns to these rows.
+arrow(5, 11.40, 5, 11.05, C_LABEL)
+box(5, 10.60, 5.4, 0.9, "radiology + radiology_detail", C_LABEL, fontsize=8.5,
+    sub="3 head-CT types  →  IMPRESSION / FINDINGS")
 
-# ── Two parallel extraction paths ──────────────────────────────────────────
-# Labeling path (left, blue)
-box(2.9, 10.15, 3.6, 0.95,
-    "Step 1  ·  Label CT reports",
-    C_LABEL, sub="rule-based regex NLP")
-box(2.9, 8.8, 3.6, 1.0,
-    "radiology + radiology_detail",
-    C_LABEL, fontsize=8,
-    sub="3 head-CT types  →  IMPRESSION")
-arrow(2.9, 9.65, 2.9, 9.3, C_LABEL)
-box(2.9, 7.35, 3.6, 1.05,
-    "CT labels",
-    C_LABEL, fontsize=9, weight="bold",
+arrow(5, 10.15, 5, 9.83, C_LABEL)
+box(5, 9.40, 4.8, 0.85, "one row per CT order", C_SOURCE, fontsize=9.5,
+    weight="bold", sub="patient · admission · scan time")
+
+# ── Two things attached to those rows ──────────────────────────────────────
+arrow(5, 8.98, 2.9, 8.45, C_LABEL)
+arrow(5, 8.98, 7.1, 8.45, C_FEAT)
+
+box(2.9, 7.95, 3.6, 1.0, "Step 1  ·  Label the report", C_LABEL, fontsize=9,
+    sub="rule-based regex NLP")
+box(7.1, 7.95, 3.6, 1.0, "Step 2  ·  Extract features", C_FEAT, fontsize=9,
+    sub="4h pre-scan · chart / lab / med")
+
+arrow(2.9, 7.45, 2.9, 7.05, C_LABEL)
+arrow(7.1, 7.45, 7.1, 7.05, C_FEAT)
+
+box(2.9, 6.55, 3.6, 1.0, "CT label", C_LABEL, fontsize=9.5, weight="bold",
     sub="Neg / Pos / Post-surg / Unclear")
-arrow(2.9, 8.3, 2.9, 7.9, C_LABEL)
+box(7.1, 6.55, 3.6, 1.0, "pre-scan features", C_FEAT, fontsize=9.5,
+    weight="bold", sub="GCS, RASS, vitals, labs, meds")
 
-# Feature path (right, green)
-box(7.1, 10.15, 3.6, 0.95,
-    "Step 2  ·  Extract features",
-    C_FEAT, sub="4-hour pre-scan window")
-box(7.1, 8.8, 3.6, 1.0,
-    "ICU chart / lab / med tables",
-    C_FEAT, fontsize=8,
-    sub="GCS, vitals, labs, meds, context")
-arrow(7.1, 9.65, 7.1, 9.3, C_FEAT)
-box(7.1, 7.35, 3.6, 1.05,
-    "feature_extraction_4h",
-    C_FEAT, fontsize=8.5, weight="bold",
-    sub="17,314 rows")
-arrow(7.1, 8.3, 7.1, 7.9, C_FEAT)
+# ── Merge ──────────────────────────────────────────────────────────────────
+arrow(2.9, 6.05, 4.4, 5.55, C_MERGE)
+arrow(7.1, 6.05, 5.6, 5.55, C_MERGE)
+box(5, 5.10, 6.9, 0.9, "17,314 CT orders  ·  features + label", C_MERGE,
+    fontsize=9.5, weight="bold", sub="Step 3  ·  join on the CT order")
 
-# ── Merge into final dataset ───────────────────────────────────────────────
-arrow(2.9, 6.85, 4.4, 6.15, C_MERGE)
-arrow(7.1, 6.85, 5.6, 6.15, C_MERGE)
-box(5, 5.75, 6.9, 1.25,
-    "Step 3  ·  Merge labels + features",
-    C_MERGE, fontsize=9.5, weight="bold",
-    sub="exclude neurologic-indication admissions (ICD-9/10)")
-
-arrow(5, 5.12, 5, 4.75, C_MERGE)
-box(5, 4.3, 6.9, 0.95,
-    "final_ct_head_dataset.csv",
-    C_MERGE, fontsize=10, weight="bold",
-    sub="4,638 CT orders · 3,649 patients · 57 columns")
+arrow(5, 4.65, 5, 4.18, C_MERGE,
+      label="exclude neurologic-indication admissions (ICD-9/10)", ly=0.02)
+box(5, 3.70, 6.9, 0.95, "final_ct_head_dataset.csv", C_MERGE, fontsize=10,
+    weight="bold", sub="4,638 CT orders · 3,649 patients · 57 columns")
 
 # ── Modeling ───────────────────────────────────────────────────────────────
-arrow(5, 3.82, 5, 3.30, C_MODEL,
+arrow(5, 3.23, 5, 2.78, C_MODEL,
       label="keep Positive / Negative  →  4,387 rows", ly=0.02)
-box(5, 2.75, 6.9, 1.0,
-    "Step 4  ·  Preprocess",
-    C_MODEL, fontsize=9.5, weight="bold",
-    sub="drop high-missing cols · impute · scale · one-hot")
+box(5, 2.30, 6.9, 0.95, "Step 4  ·  Preprocess", C_MODEL, fontsize=9.5,
+    weight="bold", sub="drop high-missing cols · impute · scale · one-hot  →  42 features")
 
-arrow(5, 2.25, 5, 1.85, C_MODEL)
-box(5, 1.35, 6.9, 0.95,
-    "GroupShuffleSplit on subject_id",
-    C_MODEL, fontsize=9,
-    sub="Train 3,519  ·  Test 868   (patient-level, no leakage)")
+arrow(5, 1.83, 5, 1.56, C_MODEL)
+box(5, 1.10, 6.9, 0.9, "Repeated StratifiedGroupKFold on subject_id", C_MODEL,
+    fontsize=9, sub="20 × 5-fold · patient-level (no leakage)")
 
-arrow(5, 0.87, 5, 0.55, C_MODEL)
-box(5, 0.22, 6.9, 0.72,
+arrow(5, 0.65, 5, 0.38, C_MODEL)
+box(5, 0.00, 6.9, 0.72,
     "Step 5  ·  5 classifiers  →  AUROC / AUPRC / Brier · SHAP",
     C_MODEL, fontsize=8.8, weight="bold")
 
