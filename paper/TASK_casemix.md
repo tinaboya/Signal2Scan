@@ -14,6 +14,13 @@ number as if it were clinical discrimination, and that has to change.
 **not** depend on the clinician gold labels. Case mix is a validity threat under
 any labeler. The same is true of calibration.
 
+> **This thread has an owner, and the deliverables below are a starting position,
+> not a specification.** Reorder them, drop them, add to them. The one standing
+> constraint is the deferral list at the end: those items wait on the gold labels
+> because tuning against contested labels means doing the work twice. If you think
+> one of them should come forward anyway, make the case — that argument is welcome,
+> quietly starting on them is what wastes time.
+
 ---
 
 ## What already exists — do not redo this

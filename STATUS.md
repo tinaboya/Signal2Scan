@@ -112,11 +112,18 @@ pooled), so the recommendation is stratified reporting, not separate tasks.
 |---|---|---|---|
 | Gold labels | Clinicians (2 + adjudicator) | ~450 adjudicated labels, κ | [`paper/TASK_physician.md`](paper/TASK_physician.md) |
 | Prediction tool | CS student | noise-robust flag, dirty-vs-clean | [`paper/TASK_cs_student.md`](paper/TASK_cs_student.md) |
-| Case-mix / validity analysis | Reviewer (V.S.) | `e09` extensions, calibration, reframing | [`paper/TASK_casemix.md`](paper/TASK_casemix.md) |
+| Case-mix / validity analysis | **Leads:** V.S. | `e09` extensions, calibration, reframing | [`paper/TASK_casemix.md`](paper/TASK_casemix.md) |
 | Paper + integration | Lead | writing, figures, synthesis | this repo |
 
 The threads meet at one interface: **the label.** Clinicians produce it, the
 student's tool consumes it, the paper reports it.
+
+Thread owners set their own priorities within their thread. The one cross-cutting
+constraint is §7: work that depends on the outcome labels waits for them, because
+tuning against contested labels means doing it twice. Arguing that a specific
+deferred item should come forward is fine; silently starting on one is not.
+Contributions at this scale are co-author contributions — agree that up front,
+not at submission.
 
 ## 5. Blocking decisions
 
