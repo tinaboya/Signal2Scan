@@ -16,10 +16,9 @@ any labeler. The same is true of calibration.
 
 > **This thread has an owner, and the deliverables below are a starting position,
 > not a specification.** Reorder them, drop them, add to them. The one standing
-> constraint is the deferral list at the end: those items wait on the gold labels
-> because tuning against contested labels means doing the work twice. If you think
-> one of them should come forward anyway, make the case — that argument is welcome,
-> quietly starting on them is what wastes time.
+> rule is [`STATUS.md`](../STATUS.md) §7: build and run whatever is useful against
+> the current labels, but treat every number as provisional and do not settle a
+> conclusion on them — they are contested on roughly a fifth of the cohort.
 
 ---
 

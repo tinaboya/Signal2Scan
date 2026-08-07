@@ -119,11 +119,10 @@ The threads meet at one interface: **the label.** Clinicians produce it, the
 student's tool consumes it, the paper reports it.
 
 Thread owners set their own priorities within their thread. The one cross-cutting
-constraint is §7: work that depends on the outcome labels waits for them, because
-tuning against contested labels means doing it twice. Arguing that a specific
-deferred item should come forward is fine; silently starting on one is not.
-Contributions at this scale are co-author contributions — agree that up front,
-not at submission.
+rule is §7: build and run freely against the current labels, but do not report or
+decide anything on them, because they are contested on roughly a fifth of the
+cohort. Contributions at this scale are co-author contributions — agree that up
+front, not at submission.
 
 ## 5. Blocking decisions
 
@@ -159,18 +158,39 @@ Run from repo root: `python paper/reproduce/experiments/<script>`
 | `e08` | Builds the blind gold sample + batches | ✅ built, not annotated |
 | `e09` | Case-mix baselines, within-unit, LOICUO, neuro sensitivity | ✅ |
 
-## 7. Deliberately deferred
+## 7. What waits for the gold labels — and what does not
 
-Not "rejected" — sequenced after the labels are settled, so the work is not
-redone.
+The line is between **running** an analysis and **concluding** from it. Building
+and running against the current labels is cheap and worth doing now; every number
+it produces is provisional until the labels are settled, so nothing gets reported
+or decided on that basis. Writing the analysis before the gold labels exist is
+also better practice than writing it after: pre-specification means nobody can
+ask whether the method was tuned to the gold set.
 
-- **EBM / CatBoost / LightGBM.** The five existing models sit within noise of one
-  another (0.75–0.78); the paper already states the engine is not the headline.
-- **Cleanlab / confident learning.** Already scoped as part of the noise-robust
-  method, not a separate addition. Needs gold labels.
-- **New features** — GCS deltas, sedation-aware neuro features, sodium/ammonia/
-  lactate. Genuinely promising (the counterintuitive GCS direction is likely
-  sedation confounding), but each requires re-running the BigQuery extraction.
+**Build and run now, conclude later**
+
+- **EBM / CatBoost / LightGBM.** `s2s/models.py` is a dict of estimators and
+  `e02` re-runs everything, so adding these costs almost nothing and re-running
+  on gold labels is one command. What waits is *choosing a primary model* and
+  reporting a winner — the five existing models already sit within noise of one
+  another (0.75–0.78), and a ranking taken from labels contested on ~20% of rows
+  would not survive the labels changing.
+- **Cleanlab / confident learning.** Calibrating it needs the gold set, but the
+  implementation can be written now and dry-run on a held-out slice of the regex
+  labels, so it runs the day the gold labels land. This matches Stage 2 in
+  [`paper/TASK_cs_student.md`](paper/TASK_cs_student.md).
+- **Calibration + the corrected operating point.** Does not depend on the labels
+  at all. Assigned — [`paper/TASK_casemix.md`](paper/TASK_casemix.md).
+
+**Genuinely blocked, for a different reason**
+
+- **New features** — GCS deltas, sedation-aware neuro features, sodium / ammonia /
+  lactate. Promising: the counterintuitive GCS direction is plausibly sedation
+  confounding. But these need a fresh BigQuery extraction, and the SQL that built
+  `final_ct_head_dataset.csv` is **not in the repo** (see
+  [`DATA_LINEAGE.md`](DATA_LINEAGE.md)) — so adding a feature currently means
+  reconstructing an extraction pipeline that does not exist. Recovering those
+  queries from whoever ran them is the cheaper path and should happen first.
 - *(Missingness indicators already exist for INR, PTT, GCS, RASS — see
   `config.py`.)*
 
